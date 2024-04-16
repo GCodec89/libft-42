@@ -6,7 +6,7 @@
 #    By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 10:17:44 by gonolive          #+#    #+#              #
-#    Updated: 2024/04/16 10:25:35 by gonolive         ###   ########.fr        #
+#    Updated: 2024/04/16 10:46:52 by gonolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ SRCS			=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 					ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 					ft_putstr_fd.c ft_strchr.c ft_strdup.c ft_striteri.c \
 					ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c \
-					ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_substr.c \
-					ft_tolower.c ft_toupper.c
+					ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c \
+					ft_substr.c ft_tolower.c ft_toupper.c
 OBJS 			= $(SRCS:.c=.o)
 
 BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
