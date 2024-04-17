@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 10:31:45 by gonolive          #+#    #+#             */
-/*   Updated: 2024/04/15 10:54:29 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:18:59 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,14 @@
 void	*ft_calloc(size_t nmed, size_t size)
 {
 	char	*str;
-	size_t	i;
-	size_t	j;
+	size_t	len;
 
-	str = (char *)malloc(size * nmed);
+	len = nmed * size;
+	str = (char *)malloc(len);
 	if (!str)
 	{
 		return (NULL);
 	}
-	i = 0;
-	j = 0;
-	while (i < size * nmed)
-	{
-		((unsigned char *)str)[i++] = (unsigned char)j;
-	}
+	ft_memset(str, 0, len);
 	return (str);
 }

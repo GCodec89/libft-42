@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:47:47 by gonolive          #+#    #+#             */
-/*   Updated: 2024/04/13 11:58:39 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:19:06 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	{
 		return (0);
 	}
-	len = 0;
-	while (src[len])
-	{
-		len++;
-	}
+	len = ft_strlen(src);
 	i = 0;
 	if (size > 0)
 	{
