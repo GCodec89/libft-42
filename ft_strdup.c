@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 10:55:03 by gonolive          #+#    #+#             */
-/*   Updated: 2024/04/16 22:18:56 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:40:14 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ char	*ft_strdup(const char *s1)
 	int		i;
 	char	*s2;
 
-	s2 = (char *)malloc(sizeof(char *) * (ft_strlen(s1) + 1));
+	s2 = (char *)malloc(ft_strlen(s1) + 1);
 	if (!s2)
 	{
-		return (NULL);
+		return (0);
 	}
 	i = 0;
 	while (s1[i] != '\0')

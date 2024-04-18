@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:16:50 by gonolive          #+#    #+#             */
-/*   Updated: 2024/04/16 10:21:41 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/04/18 22:15:04 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	j;
 
+	if (!s)
+		return (0);
 	substr = (char *)malloc(sizeof(*s) * (len + 1));
 	if (!substr)
 	{

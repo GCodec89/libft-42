@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 09:56:24 by gonolive          #+#    #+#             */
-/*   Updated: 2024/04/15 10:08:22 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/04/18 19:29:58 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
+	if (big == NULL && len == 0)
+		return (NULL);
 	i = 0;
 	if (!little[i])
 	{

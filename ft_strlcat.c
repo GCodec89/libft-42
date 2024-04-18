@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 15:46:36 by gonolive          #+#    #+#             */
-/*   Updated: 2024/04/16 22:19:03 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/04/18 19:27:25 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,23 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
-	size_t	k;
 
-	k = ft_strlen(src);
 	i = 0;
-	while (dst[i] != '\0' && i < size)
+	j = 0;
+	if (dst == NULL && size == 0)
+	{
+		return (ft_strlen(src));
+	}
+	while (dst[i] && i < size)
 	{
 		i++;
 	}
-	j = 0;
-	while (src[j] != '\0' && (i + j + 1) < size)
+	while (src[j] && (i + j + 1) < size)
 	{
-		dst [i + j] = src[j];
+		dst[i + j] = src[j];
 		j++;
 	}
 	if (i < size)
-	{
 		dst[i + j] = '\0';
-	}
-	return (i + k);
+	return (i + ft_strlen(src));
 }
