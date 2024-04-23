@@ -6,7 +6,7 @@
 #    By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 10:17:44 by gonolive          #+#    #+#              #
-#    Updated: 2024/04/22 21:12:51 by gonolive         ###   ########.fr        #
+#    Updated: 2024/04/23 19:15:28 by gonolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,11 @@ SRCS			=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 					ft_toupper.c
 OBJS 			= $(SRCS:.c=.o)
 
+BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
+					ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
+					ft_lstnew.c ft_lstsize.c
+BONUS_OBJS		= $(BONUS:.c=.o)
+
 CC				= cc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror
@@ -33,15 +38,18 @@ $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
 
 clean:
-				$(RM) $(OBJS)
+				$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean:         clean
 				$(RM) $(NAME)
 
 re:             fclean $(NAME)
 
+bonus:			$(OBJS) $(BONUS_OBJS)
+				ar rsc $(NAME) $(OBJS) $(BONUS_OBJS)
+
 so:
 				$(CC) -fPIC $(CFLAGS) $(SRC)
 				gcc -shared -o libft.so $(OBJ)
 
-.PHONY:         all clean fclean re
+.PHONY:         all clean fclean re bonus
