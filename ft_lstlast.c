@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 14:38:37 by gonolive          #+#    #+#             */
-/*   Updated: 2024/04/23 14:46:14 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/04/24 16:27:31 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ t_list	*ft_lstlast(t_list *lst)
 	{
 		lst = lst->next;
 	}
-	return(lst);
+	return (lst);
 }

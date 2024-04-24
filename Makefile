@@ -6,7 +6,7 @@
 #    By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 10:17:44 by gonolive          #+#    #+#              #
-#    Updated: 2024/04/23 19:15:28 by gonolive         ###   ########.fr        #
+#    Updated: 2024/04/24 16:19:32 by gonolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJS 			= $(SRCS:.c=.o)
 
 BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
 					ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
-					ft_lstnew.c ft_lstsize.c
+					ft_lstmap.c ft_lstnew.c ft_lstsize.c
 BONUS_OBJS		= $(BONUS:.c=.o)
 
 CC				= cc
@@ -47,9 +47,5 @@ re:             fclean $(NAME)
 
 bonus:			$(OBJS) $(BONUS_OBJS)
 				ar rsc $(NAME) $(OBJS) $(BONUS_OBJS)
-
-so:
-				$(CC) -fPIC $(CFLAGS) $(SRC)
-				gcc -shared -o libft.so $(OBJ)
 
 .PHONY:         all clean fclean re bonus
