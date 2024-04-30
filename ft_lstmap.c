@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 18:08:24 by gonolive          #+#    #+#             */
-/*   Updated: 2024/04/24 16:27:42 by gonolive         ###   ########.fr       */
+/*   Created: 2024/04/24 13:44:47 by gonolive          #+#    #+#             */
+/*   Updated: 2024/04/30 12:05:38 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,26 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*ret;
-	t_list	*tmp;
+	t_list	*new_lst;
+	t_list	*tmp_node;
+	void	*tmp_cnt;
 
-	ret = 0;
+	if (!lst || !f || !del)
+		return (0);
+	new_lst = 0;
 	while (lst)
 	{
-		tmp = ft_lstnew(f(lst->content));
-		if (!tmp)
+		tmp_cnt = (*f)(lst->content);
+		if (tmp_cnt)
+			tmp_node = ft_lstnew(tmp_cnt);
+		if (!tmp_node || !tmp_cnt)
 		{
-			ft_lstclear(&ret, del);
+			ft_lstclear(&new_lst, del);
+			(*del)(tmp_cnt);
 			return (0);
 		}
-		ft_lstadd_back(&ret, tmp);
+		ft_lstadd_back(&new_lst, tmp_node);
 		lst = lst->next;
 	}
-	return (ret);
+	return (new_lst);
 }

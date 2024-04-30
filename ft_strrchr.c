@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 16:16:38 by gonolive          #+#    #+#             */
-/*   Updated: 2024/04/24 16:30:33 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/04/24 12:27:53 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	len;
+	const char	*str;
 
-	len = ft_strlen(s);
-	if (c == 0)
+	str = s;
+	while (*s)
 	{
-		return ((char *)(s + len));
+		s++;
 	}
-	if (!s[0])
+	while (s >= str)
 	{
-		return (NULL);
-	}
-	while (len--)
-	{
-		if (*(s + len) == (char)c)
+		if (*s-- == (char)c)
 		{
-			return ((char *)(s + len));
+			return ((char *)s + 1);
 		}
 	}
 	return (NULL);
